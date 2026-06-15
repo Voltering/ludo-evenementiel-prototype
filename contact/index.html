@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - Ludo Événementiel</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Nunito+Sans:wght@400;700&amp;family=Outfit:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+    "background": "var(--bg-dark)",
+    "surface": "var(--bg-dark)",
+    "on-background": "var(--text-main)",
+    "on-surface": "var(--text-main)",
+    "on-surface-variant": "var(--text-muted)",
+    "text-brown-deep": "var(--text-heading)",
+    "primary": "var(--primary)",
+    "primary-container": "var(--primary-glow)",
+    "on-primary": "var(--text-heading)",
+    "on-primary-container": "var(--text-main)",
+    "secondary": "var(--text-muted)",
+    "on-secondary": "var(--text-main)",
+    "secondary-container": "var(--bg-card-hover)",
+    "on-secondary-container": "var(--text-main)",
+    "tertiary": "var(--border)",
+    "on-tertiary": "var(--text-main)",
+    "tertiary-container": "var(--bg-card-hover)",
+    "on-tertiary-container": "var(--text-main)",
+    "surface-paper": "var(--bg-card)",
+    "surface-container-lowest": "var(--bg-card)",
+    "surface-container-low": "var(--bg-card-hover)",
+    "surface-container": "var(--bg-card)",
+    "surface-container-high": "var(--bg-card-hover)",
+    "surface-container-highest": "var(--bg-card-hover)",
+    "surface-dim": "var(--bg-card-hover)",
+    "surface-bright": "var(--bg-dark)",
+    "surface-tint": "var(--primary)",
+    "outline": "var(--border)",
+    "outline-variant": "var(--border)",
+    "corporate-slate": "var(--primary)"
+},
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "section-gap": "80px",
+                    "container-padding-mobile": "20px",
+                    "container-padding-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Nunito Sans"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Outfit"
+                    ],
+                    "headline-md": [
+                            "Outfit"
+                    ],
+                    "display-lg-mobile": [
+                            "Outfit"
+                    ],
+                    "body-lg": [
+                            "Nunito Sans"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                             }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #08080a; /* Dark Mode Ludo Noir Base */
+        }
+        
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .material-symbols-outlined.filled {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        
+        /* Custom Glowing Card */
+        .glass-card {
+            background-color: rgba(18, 18, 26, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Amber Glow for active elements */
+        .glow-amber:hover, .glow-amber.active {
+            box-shadow: 0 0 15px rgba(255, 191, 0, 0.3);
+            border-color: #ffbf00;
+        }
+        
+        /* Form Inputs */
+        .glass-input {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-bottom: 2px solid rgba(255, 191, 0, 0.3);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            outline: none;
+            border-bottom-color: #ffbf00;
+            box-shadow: 0 4px 15px -3px rgba(255, 191, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Confetti Canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  
+  <!-- Shared CSS Variables and Styles -->
+  <link rel="stylesheet" href="../shared/style.css">
+</head>
+<body class="bg-[#08080a] text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<!-- En-tÃªte / Navigation -->
+<header>
+  <div class="container nav-wrapper">
+    <a href="../index.html" class="logo">
+      LUDO <span>Ã‰VÃ‰NEMENTIEL</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu principal">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html" class="nav-link ">Accueil</a></li>
+      <li><a href="../mariage/index.html" class="nav-link ">Mariage</a></li>
+      <li><a href="../anniv-18-25/index.html" class="nav-link ">Anniv 18-25</a></li>
+      <li><a href="../anniv-30-60/index.html" class="nav-link ">Anniv 30-60</a></li>
+      <li><a href="../entreprise/index.html" class="nav-link ">Entreprise</a></li>
+      <li><a href="../contact/index.html" class="nav-link active">Contact</a></li>
+    </ul>
+  </div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[100px] pb-section-gap px-container-padding-mobile md:px-container-padding-desktop flex flex-col items-center">
+<!-- Hero Section (Visible initially) -->
+<section class="w-full max-w-3xl text-center space-y-8 mt-12 md:mt-24 transition-opacity duration-500" id="hero-section">
+<h1 class="font-display-lg-mobile md:font-display-lg text-primary text-display-lg-mobile md:text-display-lg">
+                Planifiez votre ambiance en quelques clics
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Répondez à ces quelques questions rapides pour me partager les détails de votre événement en moins de 60 secondes. (Devis personnalisé envoyé sous 24h)
+            </p>
+<button class="bg-primary-container text-on-primary-container font-headline-md text-headline-md px-8 py-4 rounded-full shadow-[0_0_20px_rgba(255,191,0,0.4)] hover:shadow-[0_0_30px_rgba(255,191,0,0.6)] transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2 mx-auto animate-pulse" id="start-wizard-btn">
+                👉 Commencer mon estimation <span class="text-sm opacity-80">(60 secondes)</span>
+</button>
+</section>
+<!-- Form Wizard (Hidden initially) -->
+<section class="w-full max-w-3xl hidden opacity-0 transition-opacity duration-500 mt-8" id="wizard-section">
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full mb-8 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-surface-tint transition-all duration-300" id="progress-bar" style="width: 16.66%;"></div>
+</div>
+<div class="glass-card rounded-xl p-6 md:p-10 relative">
+<!-- Step 1: Type of Event -->
+<div class="wizard-step" id="step-1">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 text-center">Quel type d'événement préparez-vous ?</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<button class="event-type-btn glass-card rounded-lg p-6 text-center glow-amber transition-all flex flex-col items-center gap-4 hover:-translate-y-1" data-value="mariage">
+<span class="material-symbols-outlined text-4xl text-primary filled" data-icon="favorite" data-weight="fill">favorite</span>
+<span class="font-headline-md text-lg">Mariage</span>
+</button>
+<button class="event-type-btn glass-card rounded-lg p-6 text-center glow-amber transition-all flex flex-col items-center gap-4 hover:-translate-y-1" data-value="anniv">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="cake">cake</span>
+<span class="font-headline-md text-lg">Anniversaire</span>
+</button>
+<button class="event-type-btn glass-card rounded-lg p-6 text-center glow-amber transition-all flex flex-col items-center gap-4 hover:-translate-y-1" data-value="entreprise">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="business">business</span>
+<span class="font-headline-md text-lg">Entreprise / Mairie</span>
+</button>
+<button class="event-type-btn glass-card rounded-lg p-6 text-center glow-amber transition-all flex flex-col items-center gap-4 hover:-translate-y-1" data-value="autre">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="celebration">celebration</span>
+<span class="font-headline-md text-lg">Autre Soirée</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Location -->
+<div class="wizard-step hidden" id="step-2">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 text-center">Où se déroulera la fête ?</h2>
+<div class="flex flex-col items-center gap-6 mt-8">
+<div class="w-full max-w-md relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="location_on">location_on</span>
+<input class="glass-input w-full pl-12 pr-4 py-4 rounded-t-lg text-xl" id="location-input" placeholder="Ville ou Code Postal" required="" type="text"/>
+</div>
+<button class="next-btn bg-primary-container text-on-primary-container font-headline-md px-8 py-3 rounded-full mt-8 opacity-50 cursor-not-allowed transition-all" disabled="" id="btn-next-2">Continuer</button>
+</div>
+</div>
+<!-- Step 3: Guest Count -->
+<div class="wizard-step hidden" id="step-3">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 text-center">Combien d'invités attendez-vous environ ?</h2>
+<div class="flex flex-col gap-4 mt-8 max-w-md mx-auto">
+<button class="guest-btn glass-card rounded-lg p-4 text-center glow-amber transition-all hover:bg-surface-variant/50" data-value="&lt;30">
+<span class="font-headline-md text-xl">Moins de 30 invités</span>
+</button>
+<button class="guest-btn glass-card rounded-lg p-4 text-center glow-amber transition-all hover:bg-surface-variant/50" data-value="30-120">
+<span class="font-headline-md text-xl">Entre 30 et 120 invités</span>
+</button>
+<button class="guest-btn glass-card rounded-lg p-4 text-center glow-amber transition-all hover:bg-surface-variant/50" data-value="&gt;120">
+<span class="font-headline-md text-xl">Plus de 120 invités</span>
+</button>
+</div>
+</div>
+<!-- Step 4: Date -->
+<div class="wizard-step hidden" id="step-4">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 text-center">À quelle date ?</h2>
+<div class="flex flex-col items-center gap-6 mt-8">
+<div class="w-full max-w-md relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="calendar_month">calendar_month</span>
+<input class="glass-input w-full pl-12 pr-4 py-4 rounded-t-lg text-xl color-scheme-dark" id="date-input" required="" type="date"/>
+</div>
+<p class="text-primary hidden font-body-md animate-fade-in text-center mt-4" id="date-success-msg">
+<span class="material-symbols-outlined align-middle mr-1" data-icon="check_circle">check_circle</span> Parfait ! Je vérifie mes disponibilités pour cette date.
+                         </p>
+<button class="next-btn bg-primary-container text-on-primary-container font-headline-md px-8 py-3 rounded-full mt-4 opacity-50 cursor-not-allowed transition-all" disabled="" id="btn-next-4">Continuer</button>
+</div>
+</div>
+<!-- Step 5: Mood Tags -->
+<div class="wizard-step hidden" id="step-5">
+<h2 class="font-headline-md text-headline-md text-primary mb-2 text-center">Quelle ambiance recherchez-vous ?</h2>
+<p class="text-on-surface-variant text-center mb-8 text-sm">(Sélectionnez plusieurs options)</p>
+<div class="flex flex-wrap justify-center gap-3 mt-4">
+<button class="mood-tag px-4 py-2 rounded-full bg-surface-variant text-on-surface border border-transparent hover:border-primary transition-all text-sm md:text-base font-label-caps tracking-wider" data-value="dancefloor">NON-STOP DANCEFLOOR</button>
+<button class="mood-tag px-4 py-2 rounded-full bg-surface-variant text-on-surface border border-transparent hover:border-primary transition-all text-sm md:text-base font-label-caps tracking-wider" data-value="lounge">LOUNGE CHIC</button>
+<button class="mood-tag px-4 py-2 rounded-full bg-surface-variant text-on-surface border border-transparent hover:border-primary transition-all text-sm md:text-base font-label-caps tracking-wider" data-value="speeches">DISCOURS / ANIMATION</button>
+<button class="mood-tag px-4 py-2 rounded-full bg-surface-variant text-on-surface border border-transparent hover:border-primary transition-all text-sm md:text-base font-label-caps tracking-wider" data-value="quiz">JEUX / QUIZ</button>
+<button class="mood-tag px-4 py-2 rounded-full bg-surface-variant text-on-surface border border-transparent hover:border-primary transition-all text-sm md:text-base font-label-caps tracking-wider" data-value="photobooth">PHOTOBOOTH</button>
+<button class="mood-tag px-4 py-2 rounded-full bg-surface-variant text-on-surface border border-transparent hover:border-primary transition-all text-sm md:text-base font-label-caps tracking-wider" data-value="lasers">LASERS / FUMÉE LOURDE</button>
+<button class="mood-tag px-4 py-2 rounded-full bg-surface-variant text-on-surface border border-transparent hover:border-primary transition-all text-sm md:text-base font-label-caps tracking-wider" data-value="nocheesy">PAS DE MUSIQUES RINGARDES</button>
+</div>
+<div class="flex justify-center mt-8">
+<button class="next-btn bg-primary-container text-on-primary-container font-headline-md px-8 py-3 rounded-full transition-all hover:shadow-[0_0_15px_rgba(255,191,0,0.4)]" id="btn-next-5">C'est presque fini !</button>
+</div>
+</div>
+<!-- Step 6: Contact Info -->
+<div class="wizard-step hidden" id="step-6">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 text-center">Où dois-je envoyer votre devis ?</h2>
+<form class="flex flex-col gap-6 max-w-md mx-auto" id="final-contact-form">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="person">person</span>
+<input autocomplete="name" class="glass-input w-full pl-12 pr-4 py-4 rounded-t-lg text-lg" id="name-input" placeholder="Votre Nom complet" required="" type="text"/>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="mail">mail</span>
+<input autocomplete="email" class="glass-input w-full pl-12 pr-4 py-4 rounded-t-lg text-lg" id="email-input" inputmode="email" placeholder="Votre Email" required="" type="email"/>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="call">call</span>
+<input autocomplete="tel" class="glass-input w-full pl-12 pr-4 py-4 rounded-t-lg text-lg" id="tel-input" inputmode="tel" placeholder="Votre Numéro (Optionnel)" type="tel"/>
+</div>
+<button class="bg-primary-container text-on-primary-container font-headline-md px-8 py-4 rounded-full mt-4 transition-all hover:shadow-[0_0_20px_rgba(255,191,0,0.6)] transform hover:-translate-y-1 font-bold" type="submit">Envoyer ma demande</button>
+</form>
+</div>
+<!-- Success Screen -->
+<div class="wizard-step hidden flex-col items-center justify-center py-10" id="step-success">
+<div class="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(255,191,0,0.4)]">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="check">check</span>
+</div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-4 text-center">Demande envoyée !</h2>
+<p class="text-on-surface-variant text-center max-w-md mx-auto font-body-lg text-body-lg">
+                        Merci pour votre confiance. J'ai bien reçu vos informations. Je prépare votre devis personnalisé et je reviens vers vous sous 24h.
+                    </p>
+<a class="mt-8 text-primary underline hover:text-white transition-colors" href="/">Retour à l'accueil</a>
+</div>
+<!-- Navigation Controls (Bottom) -->
+<div class="flex justify-between mt-8 pt-4 border-t border-white/5" id="wizard-nav-controls">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 hidden" id="btn-prev">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span> Retour
+                    </button>
+<span class="text-xs text-on-surface-variant/50 ml-auto" id="step-indicator">Étape 1/6</span>
+</div>
+</div>
+</section>
+<canvas id="confetti-canvas"></canvas>
+</main>
+<!-- Footer -->
+<!-- Pied de page -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>LUDO Ã‰VÃ‰NEMENTIEL</h3>
+        <p>DJ professionnel gÃ©nÃ©raliste pour mariages, anniversaires et Ã©vÃ©nements d'entreprises en Seine-et-Marne.</p>
+        <p>Prestations haut de gamme sur-mesure, sonorisation et mise en lumiÃ¨re architecturales.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="../mariage/index.html">DJ Mariage</a></li>
+          <li><a href="../anniv-18-25/index.html">Anniversaire 18-25 ans</a></li>
+          <li><a href="../anniv-30-60/index.html">Anniversaire 30-60 ans</a></li>
+          <li><a href="../entreprise/index.html">SoirÃ©es d'Entreprises</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact &amp; Infos</h4>
+        <ul>
+          <li><a href="../contact/index.html">Demander un Devis</a></li>
+          <li><a href="../index.html#conditions">Conditions</a></li>
+          <li><a href="../contact/index.html#faq">Questions FrÃ©quentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-seo-paragraph">
+        <strong>Zone d'intervention :</strong> DJ Seine-et-Marne (77) - Meaux, Chessy, Marne-la-VallÃ©e, Serris, Melun, Fontainebleau, Coulommiers, Torcy, Pontault-Combault, Provins, Chelles. Animations de mariages, anniversaires intergÃ©nÃ©rationnels, fÃªtes privÃ©es, soirÃ©es corporate, sÃ©minaires de fin d'annÃ©e et lancements de produits.
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Â© 2026 Ludo Ã‰vÃ©nementiel. Tous droits rÃ©servÃ©s.</p>
+      <p>
+        <a href="#">Mentions LÃ©gales</a> | 
+        <a href="#">Politique de ConfidentialitÃ©</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- BottomNavBar Mobile -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-xl flex justify-around items-center px-4 py-2 border-t border-white/5 shadow-[0_-5px_15px_rgba(0,0,0,0.3)]">
+<a class="flex flex-col items-center p-2 text-on-surface-variant hover:text-primary transition-colors" href="/">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="text-[10px] mt-1 font-label-caps">Accueil</span>
+</a>
+<a class="flex flex-col items-center p-2 text-on-surface-variant hover:text-primary transition-colors" href="/mariage">
+<span class="material-symbols-outlined text-2xl" data-icon="favorite">favorite</span>
+<span class="text-[10px] mt-1 font-label-caps">Mariage</span>
+</a>
+<a class="flex flex-col items-center p-2 text-on-surface-variant hover:text-primary transition-colors" href="/entreprise">
+<span class="material-symbols-outlined text-2xl" data-icon="business">business</span>
+<span class="text-[10px] mt-1 font-label-caps">Pro</span>
+</a>
+<a class="flex flex-col items-center p-2 text-primary" href="/contact">
+<div class="bg-primary/20 p-1 rounded-full absolute -top-4 shadow-[0_0_10px_rgba(255,191,0,0.3)] border border-primary/30 backdrop-blur-md">
+<span class="material-symbols-outlined text-3xl filled" data-icon="send" data-weight="fill">send</span>
+</div>
+<span class="text-[10px] mt-6 font-label-caps font-bold">Contact</span>
+</a>
+</nav>
+<!-- Wizard Logic -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroSection = document.getElementById('hero-section');
+            const wizardSection = document.getElementById('wizard-section');
+            const startBtn = document.getElementById('start-wizard-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const stepIndicator = document.getElementById('step-indicator');
+            const prevBtn = document.getElementById('btn-prev');
+            const navControls = document.getElementById('wizard-nav-controls');
+            
+            let currentStep = 1;
+            const totalSteps = 6;
+            
+            const formData = {
+                eventType: '',
+                location: '',
+                guests: '',
+                date: '',
+                moods: [],
+                contact: {}
+            };
+
+            // Start Wizard
+            startBtn.addEventListener('click', () => {
+                heroSection.classList.add('opacity-0');
+                setTimeout(() => {
+                    heroSection.classList.add('hidden');
+                    wizardSection.classList.remove('hidden');
+                    setTimeout(() => wizardSection.classList.remove('opacity-0'), 50);
+                }, 500);
+            });
+
+            function showStep(step) {
+                document.querySelectorAll('.wizard-step').forEach(el => el.classList.add('hidden'));
+                document.getElementById(`step-${step}`).classList.remove('hidden');
+                
+                if(step <= totalSteps) {
+                    progressBar.style.width = `${(step / totalSteps) * 100}%`;
+                    stepIndicator.textContent = `Étape ${step}/${totalSteps}`;
+                }
+
+                if (step > 1 && step <= totalSteps) {
+                    prevBtn.classList.remove('hidden');
+                } else {
+                    prevBtn.classList.add('hidden');
+                }
+                
+                if(step === 'success') {
+                    navControls.classList.add('hidden');
+                    progressBar.parentElement.classList.add('hidden');
+                    fireConfetti();
+                }
+            }
+
+            function nextStep() {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 1) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
+            });
+
+            // Step 1: Event Type
+            document.querySelectorAll('.event-type-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    formData.eventType = e.currentTarget.dataset.value;
+                    nextStep();
+                });
+            });
+
+            // Step 2: Location
+            const locInput = document.getElementById('location-input');
+            const btnNext2 = document.getElementById('btn-next-2');
+            locInput.addEventListener('input', (e) => {
+                if(e.target.value.length > 2) {
+                    btnNext2.disabled = false;
+                    btnNext2.classList.remove('opacity-50', 'cursor-not-allowed');
+                } else {
+                    btnNext2.disabled = true;
+                    btnNext2.classList.add('opacity-50', 'cursor-not-allowed');
+                }
+            });
+            btnNext2.addEventListener('click', () => {
+                formData.location = locInput.value;
+                nextStep();
+            });
+
+            // Step 3: Guests
+            document.querySelectorAll('.guest-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    formData.guests = e.currentTarget.dataset.value;
+                    nextStep();
+                });
+            });
+
+            // Step 4: Date
+            const dateInput = document.getElementById('date-input');
+            const btnNext4 = document.getElementById('btn-next-4');
+            const dateMsg = document.getElementById('date-success-msg');
+            dateInput.addEventListener('change', (e) => {
+                if(e.target.value) {
+                    btnNext4.disabled = false;
+                    btnNext4.classList.remove('opacity-50', 'cursor-not-allowed');
+                    dateMsg.classList.remove('hidden');
+                }
+            });
+            btnNext4.addEventListener('click', () => {
+                formData.date = dateInput.value;
+                nextStep();
+            });
+
+            // Step 5: Moods
+            document.querySelectorAll('.mood-tag').forEach(tag => {
+                tag.addEventListener('click', (e) => {
+                    const t = e.currentTarget;
+                    const val = t.dataset.value;
+                    t.classList.toggle('bg-primary/20');
+                    t.classList.toggle('text-primary');
+                    t.classList.toggle('border-primary');
+                    
+                    if(formData.moods.includes(val)) {
+                        formData.moods = formData.moods.filter(m => m !== val);
+                    } else {
+                        formData.moods.push(val);
+                    }
+                });
+            });
+            document.getElementById('btn-next-5').addEventListener('click', nextStep);
+
+            // Step 6: Submit
+            document.getElementById('final-contact-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                formData.contact = {
+                    name: document.getElementById('name-input').value,
+                    email: document.getElementById('email-input').value,
+                    phone: document.getElementById('tel-input').value
+                };
+                
+                // Simulate API call
+                const submitBtn = e.target.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="refresh">refresh</span> Envoi en cours...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    showStep('success');
+                }, 1000);
+            });
+
+            // Simple Confetti
+            function fireConfetti() {
+                const canvas = document.getElementById('confetti-canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                const particles = [];
+                const colors = ['#ffbf00', '#fbbc00', '#ffffff', '#9c8f78'];
+
+                for (let i = 0; i < 100; i++) {
+                    particles.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height - canvas.height,
+                        r: Math.random() * 6 + 2,
+                        d: Math.random() * 100,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        tilt: Math.floor(Math.random() * 10) - 10,
+                        tiltAngleIncrement: (Math.random() * 0.07) + 0.05,
+                        tiltAngle: 0
+                    });
+                }
+
+                let angle = 0;
+                function draw() {
+                    requestAnimationFrame(draw);
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    
+                    angle += 0.01;
+                    for (let i = 0; i < particles.length; i++) {
+                        let p = particles[i];
+                        p.tiltAngle += p.tiltAngleIncrement;
+                        p.y += (Math.cos(angle + p.d) + 1 + p.r / 2) / 2;
+                        p.x += Math.sin(angle);
+                        
+                        ctx.beginPath();
+                        ctx.lineWidth = p.r;
+                        ctx.strokeStyle = p.color;
+                        ctx.moveTo(p.x + p.tilt + p.r, p.y);
+                        ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r);
+                        ctx.stroke();
+
+                        if (p.y > canvas.height) {
+                            particles[i] = { ...p, y: -20, x: Math.random() * canvas.width };
+                        }
+                    }
+                }
+                draw();
+                
+                // Stop after 5 seconds
+                setTimeout(() => {
+                    canvas.style.opacity = '0';
+                    canvas.style.transition = 'opacity 2s';
+                }, 3000);
+            }
+        });
+    </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          menuToggle.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body></html>

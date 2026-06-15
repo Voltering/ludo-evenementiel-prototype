@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DJ Anniversaire 30-60 ans | Ludo Événementiel</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+    "background": "var(--bg-dark)",
+    "surface": "var(--bg-dark)",
+    "on-background": "var(--text-main)",
+    "on-surface": "var(--text-main)",
+    "on-surface-variant": "var(--text-muted)",
+    "text-brown-deep": "var(--text-heading)",
+    "primary": "var(--primary)",
+    "primary-container": "var(--primary-glow)",
+    "on-primary": "var(--text-heading)",
+    "on-primary-container": "var(--text-main)",
+    "secondary": "var(--text-muted)",
+    "on-secondary": "var(--text-main)",
+    "secondary-container": "var(--bg-card-hover)",
+    "on-secondary-container": "var(--text-main)",
+    "tertiary": "var(--border)",
+    "on-tertiary": "var(--text-main)",
+    "tertiary-container": "var(--bg-card-hover)",
+    "on-tertiary-container": "var(--text-main)",
+    "surface-paper": "var(--bg-card)",
+    "surface-container-lowest": "var(--bg-card)",
+    "surface-container-low": "var(--bg-card-hover)",
+    "surface-container": "var(--bg-card)",
+    "surface-container-high": "var(--bg-card-hover)",
+    "surface-container-highest": "var(--bg-card-hover)",
+    "surface-dim": "var(--bg-card-hover)",
+    "surface-bright": "var(--bg-dark)",
+    "surface-tint": "var(--primary)",
+    "outline": "var(--border)",
+    "outline-variant": "var(--border)",
+    "corporate-slate": "var(--primary)"
+},
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-v-mobile": "4rem",
+                        "gutter": "1.5rem",
+                        "stack-gap": "1rem",
+                        "section-v-desktop": "8rem",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Outfit"],
+                        "display": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Outfit"],
+                        "button": ["Outfit"],
+                        "label-caps": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "display-mobile": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "label-caps": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base styles & utilities */
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Interaction states */
+        .btn-primary {
+            @apply bg-amber-gold text-deep-brown font-button text-button rounded-lg px-8 py-4 inline-flex items-center justify-center gap-2 transition-all duration-300;
+            box-shadow: 0 4px 14px rgba(53, 37, 18, 0.08);
+        }
+        .btn-primary:hover {
+            @apply shadow-[0_6px_20px_rgba(255,191,0,0.3)] scale-[1.02];
+        }
+        .btn-secondary {
+            @apply border-2 border-sage-green text-primary font-button text-button rounded-lg px-8 py-4 inline-flex items-center justify-center gap-2 transition-all duration-300 bg-transparent;
+        }
+        .btn-secondary:hover {
+            @apply border-amber-gold text-amber-gold shadow-[0_4px_14px_rgba(53,37,18,0.05)];
+        }
+
+        /* Material Icons setup */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Parallax inner container */
+        .parallax-inner {
+            will-change: transform;
+        }
+    </style>
+
+  <!-- Shared CSS Variables and Styles -->
+  <link rel="stylesheet" href="../shared/style.css">
+</head>
+<body class="theme-warm bg-background text-on-background min-h-screen flex flex-col antialiased">
+<!-- TopAppBar (From JSON) -->
+<!-- En-tÃªte / Navigation -->
+<header>
+  <div class="container nav-wrapper">
+    <a href="../index.html" class="logo">
+      LUDO <span>Ã‰VÃ‰NEMENTIEL</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu principal">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html" class="nav-link ">Accueil</a></li>
+      <li><a href="../mariage/index.html" class="nav-link ">Mariage</a></li>
+      <li><a href="../anniv-18-25/index.html" class="nav-link ">Anniv 18-25</a></li>
+      <li><a href="../anniv-30-60/index.html" class="nav-link active">Anniv 30-60</a></li>
+      <li><a href="../entreprise/index.html" class="nav-link ">Entreprise</a></li>
+      <li><a href="../contact/index.html" class="nav-link ">Contact</a></li>
+    </ul>
+  </div>
+</header>
+<!-- NavigationDrawer (Mobile Only, hidden by default, styling provided for completeness) -->
+<div class="fixed inset-0 z-[60] bg-on-surface/20 backdrop-blur-sm hidden md:hidden" id="mobile-drawer-overlay">
+<nav class="h-full w-80 rounded-r-xl bg-white-paper dark:bg-deep-brown shadow-2xl shadow-deep-brown/10 flex flex-col py-8 transform -translate-x-full transition-transform duration-300" id="mobile-drawer">
+<div class="px-6 pb-6 border-b border-sage-green/30">
+<span class="font-display-mobile text-display-mobile text-primary">Ludo Événementiel</span>
+</div>
+<div class="flex flex-col gap-2 mt-6">
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-container-low mx-2 rounded-lg font-button text-button hover:bg-amber-gold/10 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>Accueil
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-container-low mx-2 rounded-lg font-button text-button hover:bg-amber-gold/10 transition-all" href="#">
+<span class="material-symbols-outlined">favorite</span>Mariage
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-container-low mx-2 rounded-lg font-button text-button hover:bg-amber-gold/10 transition-all" href="#">
+<span class="material-symbols-outlined">celebration</span>Anniv 18-25
+                </a>
+<a class="flex items-center gap-4 bg-secondary-container text-on-secondary-container rounded-lg mx-2 font-button text-button hover:bg-amber-gold/10 transition-all" href="#">
+<span class="material-symbols-outlined">cake</span>Anniv 30-60
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-container-low mx-2 rounded-lg font-button text-button hover:bg-amber-gold/10 transition-all" href="#">
+<span class="material-symbols-outlined">business_center</span>Entreprise
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-container-low mx-2 rounded-lg font-button text-button hover:bg-amber-gold/10 transition-all mt-auto" href="#">
+<span class="material-symbols-outlined">mail</span>Contact
+                </a>
+</div>
+</nav>
+</div>
+<!-- Main Content -->
+<main class="pt-[88px]"> <!-- Offset for fixed header -->
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-gutter py-section-v-mobile md:py-section-v-desktop">
+<!-- Background Image with Parallax setup -->
+<div class="absolute inset-0 z-0 overflow-hidden" id="hero-parallax">
+<img alt="Une piste de danse animée lors d'un anniversaire, avec des lumières chaudes et dorées, des invités de tous âges souriants et dansants. L'ambiance est festive, élégante et chaleureuse, reflétant un événement haut de gamme et intergénérationnel." class="w-full h-full object-cover parallax-inner scale-110 opacity-40" src="https://lh3.googleusercontent.com/aida/AP1WRLtpz_oYBIqU-vKNQi6QDGwvWm576zf_xP1Nj6KF1ED2EAvtWzgl2JJyeX1hVdWyFzUfWRP8koQq2wpk2ZP3wwcuSoa4O3r_ORPh-JtyuJfGA2K1GqByxIIfMCOv9d7rHIxBa85vsz1eC4rNwVwGoxFI93uTlpbcUlJs-nDRrxsTMvcAWP5Gzfyw3JQ9_uRXFzgupTqZvttQtY9HOGVkC4Xui8HPQJdrO7tearyrToMFYo5T4HNdhLGVcg"/>
+<div class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/60 to-surface"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-6 reveal">
+<!-- Trust Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white-paper shadow-[0_4px_14px_rgba(53,37,18,0.05)] border border-sage-green/20">
+<span class="text-amber-gold">★</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Note moyenne : 4.9/5 sur plus de 150 avis</span>
+</div>
+<h1 class="font-display-mobile text-display-mobile md:font-display md:text-display text-primary tracking-tight">
+                    Vos 30, 40, 50 ou 60 ans méritent une fête intergénérationnelle réussie.
+                </h1>
+<p class="font-body-md text-body-md md:font-body-lg md:text-body-lg text-on-surface-variant max-w-2xl">
+                    De la nostalgie des années 80 à l'électro moderne, en passant par le reggaeton (oui, même Bad Bunny), je crée une ambiance musicale sur-mesure pour que vos amis d'enfance et la nouvelle génération partagent la même piste.
+                </p>
+<div class="mt-8">
+<a class="btn-primary group" href="#contact">
+                        👉 Vérifier si ma date est disponible
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Contexte Section -->
+<section class="py-section-v-mobile md:py-section-v-desktop px-gutter bg-white-paper">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div class="reveal">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-6">
+                        Une piste de danse qui réunit toutes les générations
+                    </h2>
+<div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<p>
+                            Organiser un anniversaire pour passer un cap important (30, 40, 50 ans...) est souvent un défi musical. Vous invitez votre famille, vos collègues, vos amis d'enfance, et parfois même vos enfants ou neveux. Comment satisfaire tout le monde ?
+                        </p>
+<p>
+                            La clé n'est pas de passer une playlist aléatoire, mais de savoir lire la salle. Mon rôle est de créer des ponts musicaux. Commencer par des classiques intemporels qui rassurent et invitent tout le monde à se lever, puis évoluer subtilement vers des rythmes plus actuels sans jamais "perdre" les aînés.
+                        </p>
+<p>
+                            C'est cette expertise de la "lecture de piste" qui garantit une ambiance où les générations se mélangent et s'amusent ensemble.
+                        </p>
+</div>
+</div>
+<div class="relative h-[500px] rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(53,37,18,0.12)] reveal" style="transition-delay: 200ms;">
+<img alt="Un éclairage de salle de réception élégant, baigné dans des tons chauds ambrés et dorés. Des faisceaux lumineux doux mettent en valeur l'architecture du lieu, créant une atmosphère à la fois intimiste et festive, typique du design minimaliste chaleureux." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLso6y-YzU3hW_geZFIR-FzqCWKIgWhkkAwCe60lMgEPnKcu8P0bqmHv9owHavJG9DiuWSo_mS4vDUf8J7yavIXrMsMnM6X4mipVnTFIq1g4k07WMxeBIgGJ68bY3YoxqzMlQOvHnX3ReRFdaz6YRYEY9DsG5zLPxdQ9Tsqjh4uiH8D9p3vD-Pw3ZxXIe7BW_uaI_plEVIDoKWYVDpTaV09fmcIkFw7PZrFF4jAIhtdTqJnjJMXHLQRAYvs"/>
+</div>
+</div>
+</section>
+<!-- Ingredients Grid -->
+<section class="py-section-v-mobile md:py-section-v-desktop px-gutter bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-md text-headline-md text-primary">Les ingrédients d'une soirée réussie</h2>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-white-paper p-8 rounded-xl shadow-[0_4px_20px_rgba(53,37,18,0.06)] hover:shadow-[0_8px_25px_rgba(53,37,18,0.1)] transition-shadow duration-300 reveal group">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">history</span>
+</div>
+<h3 class="font-button text-button text-primary mb-3">Nostalgie maîtrisée</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Les tubes de votre jeunesse intégrés avec goût, sans tomber dans le cliché du "bal musette".</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white-paper p-8 rounded-xl shadow-[0_4px_20px_rgba(53,37,18,0.06)] hover:shadow-[0_8px_25px_rgba(53,37,18,0.1)] transition-shadow duration-300 reveal group" style="transition-delay: 100ms;">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">diversity_3</span>
+</div>
+<h3 class="font-button text-button text-primary mb-3">Intégration des jeunes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Des séquences plus urbaines ou électro pour que la nouvelle génération trouve aussi son compte.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white-paper p-8 rounded-xl shadow-[0_4px_20px_rgba(53,37,18,0.06)] hover:shadow-[0_8px_25px_rgba(53,37,18,0.1)] transition-shadow duration-300 reveal group" style="transition-delay: 200ms;">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">mic_off</span>
+</div>
+<h3 class="font-button text-button text-primary mb-3">Discrétion micro</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Je mixe, je ne suis pas animateur de foire. Les interventions micro sont limitées au strict nécessaire.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white-paper p-8 rounded-xl shadow-[0_4px_20px_rgba(53,37,18,0.06)] hover:shadow-[0_8px_25px_rgba(53,37,18,0.1)] transition-shadow duration-300 reveal group" style="transition-delay: 300ms;">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<h3 class="font-button text-button text-primary mb-3">Zéro stress logistique</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Installation élégante, câblage invisible, et autonomie totale le jour J.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-section-v-mobile md:py-section-v-desktop px-gutter bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-4">
+                        Des formules transparentes
+                    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                        Choisissez le niveau de prestation qui correspond à votre vision.
+                    </p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 items-center">
+<!-- Pack Essentiel -->
+<div class="bg-white-paper p-8 rounded-xl shadow-[0_4px_20px_rgba(53,37,18,0.06)] border border-surface-variant reveal">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Essentiel</h3>
+<div class="text-3xl font-bold text-deep-brown mb-6">500€</div>
+<ul class="space-y-4 mb-8 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sage-green text-xl mt-0.5">check_circle</span>
+                                Sonorisation de la piste
+                            </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sage-green text-xl mt-0.5">check_circle</span>
+                                Éclairage de danse basique
+                            </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sage-green text-xl mt-0.5">check_circle</span>
+                                Mix DJ jusqu'à 3h du matin
+                            </li>
+</ul>
+<button class="w-full btn-secondary">Choisir</button>
+</div>
+<!-- Pack Premium (Featured) -->
+<div class="bg-inverse-on-surface p-8 rounded-xl shadow-[0_12px_40px_rgba(255,191,0,0.15)] border-2 border-amber-gold relative transform md:-translate-y-4 reveal z-10" style="transition-delay: 100ms;">
+<div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-amber-gold text-deep-brown px-4 py-1 rounded-full font-label-caps text-label-caps">
+                            Le plus demandé
+                        </div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Expérience Premium</h3>
+<div class="text-4xl font-bold text-deep-brown mb-6">850€</div>
+<ul class="space-y-4 mb-8 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-gold text-xl mt-0.5">check_circle</span>
+<strong>Tout le pack Ambiance +</strong>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-gold text-xl mt-0.5">photo_camera</span>
+<strong>Photobooth Miroir inclus</strong>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-gold text-xl mt-0.5">check_circle</span>
+                                Éclairage architectural complet
+                            </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-gold text-xl mt-0.5">check_circle</span>
+                                Heures supplémentaires incluses
+                            </li>
+</ul>
+<button class="w-full btn-primary">Réserver cette formule</button>
+</div>
+<!-- Pack Ambiance -->
+<div class="bg-white-paper p-8 rounded-xl shadow-[0_4px_20px_rgba(53,37,18,0.06)] border border-surface-variant reveal" style="transition-delay: 200ms;">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Ambiance</h3>
+<div class="text-3xl font-bold text-deep-brown mb-6">600€</div>
+<ul class="space-y-4 mb-8 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sage-green text-xl mt-0.5">check_circle</span>
+                                Sonorisation haute fidélité
+                            </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sage-green text-xl mt-0.5">check_circle</span>
+                                Éclairage de piste dynamique
+                            </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sage-green text-xl mt-0.5">check_circle</span>
+                                Sonorisation du cocktail
+                            </li>
+</ul>
+<button class="w-full btn-secondary">Choisir</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Options Section with Photobooth image -->
+<section class="py-section-v-mobile md:py-section-v-desktop px-gutter bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="relative h-[400px] md:h-[600px] rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(53,37,18,0.12)] reveal order-2 md:order-1">
+<img alt="Un Photobooth miroir élégant lors d'un événement festif, entouré de lumières scintillantes. Des invités souriants posent devant le miroir qui affiche une interface tactile lumineuse. L'ambiance est joyeuse et haut de gamme, avec des rideaux lourds et une décoration sophistiquée en arrière-plan." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLuN95bNBUos8knytjvI4LBdRHLPKfAlbw9hqQWVVv6xp4b_hxk_W4b9A9iGMhsuqIVBRvT7-DrVovssc_IWKH_BrVRQXcaZxc8yHk8UIi3BcsiTqNDx1w6jMuGbNUuEec_VJacx2sy9lSYVNMyBvnjPIIlrxmFhcSXNaM5cHX7S93c66hJWkjjfj0zeTRXkZkGOfn7usAF6ZSr-OsJQk8UbnHziRBg6BOQPb-TSxT8rtZHqtKOujwFySCk"/>
+</div>
+<div class="reveal order-1 md:order-2">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-8">
+                             Personnalisez votre événement
+                        </h2>
+<div class="space-y-4">
+<!-- Option 1 -->
+<div class="bg-white-paper p-6 rounded-xl border border-sage-green/30 flex items-center justify-between hover:border-amber-gold transition-colors duration-300">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h4 class="font-button text-button text-primary">Décoration LED</h4>
+<span class="bg-secondary-container/20 text-secondary text-xs px-2 py-0.5 rounded-full">Best-Seller</span>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant">Mise en lumière des murs à vos couleurs.</p>
+</div>
+<span class="font-bold text-deep-brown">+150€</span>
+</div>
+<!-- Option 2 -->
+<div class="bg-white-paper p-6 rounded-xl border border-sage-green/30 flex items-center justify-between hover:border-amber-gold transition-colors duration-300">
+<div>
+<h4 class="font-button text-button text-primary mb-1">Étincelles Froides</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Pour le moment du gâteau (sans danger).</p>
+</div>
+<span class="font-bold text-deep-brown">+120€</span>
+</div>
+<!-- Option 3 -->
+<div class="bg-white-paper p-6 rounded-xl border border-sage-green/30 flex items-center justify-between hover:border-amber-gold transition-colors duration-300">
+<div>
+<h4 class="font-button text-button text-primary mb-1">Spinner 360°</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Vidéos souvenirs dynamiques pour vos invités.</p>
+</div>
+<span class="font-bold text-deep-brown">+350€</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Form Section -->
+<section class="py-section-v-mobile md:py-section-v-desktop px-gutter bg-surface-container-low" id="contact">
+<div class="max-w-3xl mx-auto bg-white-paper p-8 md:p-12 rounded-2xl shadow-[0_8px_30px_rgba(53,37,18,0.08)] reveal">
+<div class="text-center mb-10">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Discutons de votre projet d'anniversaire</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Laissez-moi quelques détails pour vérifier ma disponibilité.</p>
+</div>
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="name">Votre nom</label>
+<input class="w-full bg-surface border-sage-green/50 rounded-lg focus:border-amber-gold focus:ring-amber-gold focus:ring-1 h-12 px-4 transition-colors" id="name" placeholder="Jean Dupont" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="date">Date prévue</label>
+<input class="w-full bg-surface border-sage-green/50 rounded-lg focus:border-amber-gold focus:ring-amber-gold focus:ring-1 h-12 px-4 transition-colors" id="date" type="date"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="location">Lieu (si connu)</label>
+<input class="w-full bg-surface border-sage-green/50 rounded-lg focus:border-amber-gold focus:ring-amber-gold focus:ring-1 h-12 px-4 transition-colors" id="location" placeholder="Ex: Domaine de la Grange..." type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="message">Parlez-moi de vos envies musicales</label>
+<textarea class="w-full bg-surface border-sage-green/50 rounded-lg focus:border-amber-gold focus:ring-amber-gold focus:ring-1 p-4 transition-colors" id="message" placeholder="Plutôt 80s, électro, pop urbaine ? Quels sont les titres incontournables pour vous ?" rows="4"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full btn-primary text-center justify-center h-14 text-lg" type="submit">
+                            Envoyer ma demande
+                        </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer (From JSON) -->
+<!-- Pied de page -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>LUDO Ã‰VÃ‰NEMENTIEL</h3>
+        <p>DJ professionnel gÃ©nÃ©raliste pour mariages, anniversaires et Ã©vÃ©nements d'entreprises en Seine-et-Marne.</p>
+        <p>Prestations haut de gamme sur-mesure, sonorisation et mise en lumiÃ¨re architecturales.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="../mariage/index.html">DJ Mariage</a></li>
+          <li><a href="../anniv-18-25/index.html">Anniversaire 18-25 ans</a></li>
+          <li><a href="../anniv-30-60/index.html">Anniversaire 30-60 ans</a></li>
+          <li><a href="../entreprise/index.html">SoirÃ©es d'Entreprises</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact &amp; Infos</h4>
+        <ul>
+          <li><a href="../contact/index.html">Demander un Devis</a></li>
+          <li><a href="../index.html#conditions">Conditions</a></li>
+          <li><a href="../contact/index.html#faq">Questions FrÃ©quentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-seo-paragraph">
+        <strong>Zone d'intervention :</strong> DJ Seine-et-Marne (77) - Meaux, Chessy, Marne-la-VallÃ©e, Serris, Melun, Fontainebleau, Coulommiers, Torcy, Pontault-Combault, Provins, Chelles. Animations de mariages, anniversaires intergÃ©nÃ©rationnels, fÃªtes privÃ©es, soirÃ©es corporate, sÃ©minaires de fin d'annÃ©e et lancements de produits.
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Â© 2026 Ludo Ã‰vÃ©nementiel. Tous droits rÃ©servÃ©s.</p>
+      <p>
+        <a href="#">Mentions LÃ©gales</a> | 
+        <a href="#">Politique de ConfidentialitÃ©</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer for Reveal Animations
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15, // Trigger when 15% visible
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Simple Parallax Effect for Hero Image
+            const heroParallax = document.getElementById('hero-parallax');
+            if (heroParallax) {
+                const innerImg = heroParallax.querySelector('.parallax-inner');
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY;
+                    // Move image slightly slower than scroll speed
+                    if (scrollY < window.innerHeight) {
+                        innerImg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.1)`;
+                    }
+                });
+            }
+        });
+    </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          menuToggle.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body></html>

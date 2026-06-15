@@ -1,0 +1,762 @@
+/* ==========================================================================
+   DESIGN SYSTEM - DJ LUDO V3 (SHARED CSS)
+   ========================================================================== */
+
+/* 1. Variables Globales & Thème (Theme Factory / Atelier) */
+:root {
+  /* Palette de couleurs par défaut (Mode Sombre / Ludo Noir) */
+  --bg-dark: #0f0d0b;           /* Noir chaud (Atelier Décision 1) */
+  --bg-card: #1b1816;           /* Cartes et sections secondaires */
+  --bg-card-hover: #26221f;     /* Effet de survol */
+  --text-main: #f3f4f6;         /* Gris clair/blanc principal */
+  --text-muted: #9ca3af;        /* Gris moyen secondaire */
+  --text-heading: #ffffff;      /* Blanc pour les titres */
+  --primary: #f59e0b;           /* Ambre principal */
+  --primary-glow: rgba(245, 158, 11, 0.3); /* Lueur active */
+  --border: rgba(255, 255, 255, 0.06);     /* Bordure fine standard */
+  --border-active: rgba(245, 158, 11, 0.4);/* Bordure active */
+  --bg-header: rgba(15, 13, 11, 0.9);      /* Fond de l'en-tête */
+  --bg-footer: #080706;                     /* Fond du pied de page */
+  --card-shadow: none;
+  
+  /* Typographies */
+  --font-title: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Espacements et Rayons */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --transition-smooth: all 0.3s ease;
+  
+  /* Paddings de sections */
+  --section-padding: 80px 0;
+  --section-padding-large: 120px 0; /* Atelier Décision 8 */
+}
+
+/* Thème Mariage & Anniversaires (Warm Minimalism) */
+.theme-warm, .theme-wedding {
+  --bg-dark: #fff8f4;           /* Fond crème/beige */
+  --bg-card: #ffffff;           /* Fond de carte blanc */
+  --bg-card-hover: #fbf6f0;     /* Survol crème légèrement plus sombre */
+  --text-main: #352512;         /* Texte principal marron foncé */
+  --text-muted: #5c4d3c;        /* Texte secondaire marron doux */
+  --text-heading: #352512;      /* Titres marron foncé */
+  --primary: #f59e0b;           /* Touche d'accent ambre */
+  --primary-glow: rgba(245, 158, 11, 0.2);
+  --border: #bec6b3;            /* Bordures vert sauge fines */
+  --border-active: #f59e0b;     /* Bordure active ambre */
+  --bg-header: rgba(255, 248, 244, 0.9);
+  --bg-footer: #f5ede6;
+  --card-shadow: 0 10px 30px rgba(53, 37, 18, 0.05); /* Ombre douce teintée marron */
+}
+
+/* Thème Entreprise / Corporate (Slate Blue) */
+.theme-corporate {
+  --bg-dark: #f1f5f9;           /* Fond gris-bleu très clair */
+  --bg-card: #ffffff;           /* Fond de carte blanc */
+  --bg-card-hover: #e2e8f0;     /* Survol gris clair */
+  --text-main: #1e293b;         /* Texte principal slate */
+  --text-muted: #4f6070;        /* Texte secondaire slate blue */
+  --text-heading: #0f172a;      /* Titres slate foncé */
+  --primary: #4f6070;           /* Accent bleu ardoise corporate */
+  --primary-glow: rgba(79, 96, 112, 0.2);
+  --border: #cbd5e1;            /* Bordures grises */
+  --border-active: #4f6070;     /* Bordure active bleu ardoise */
+  --bg-header: rgba(241, 245, 249, 0.9);
+  --bg-footer: #cbd5e1;
+  --card-shadow: 0 10px 30px rgba(79, 96, 112, 0.08); /* Ombre bleu ardoise */
+}
+
+/* 2. Reset & Base Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: var(--section-padding);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+/* 3. Typographies & Titres */
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.2;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 56px auto;
+}
+
+.section-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 40px;
+  }
+}
+
+/* 4. En-tête / Navigation */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-header);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--text-heading);
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #ffffff;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* Menu Mobile Hamburger */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-heading);
+  margin-bottom: 6px;
+  transition: var(--transition-smooth);
+}
+
+.menu-toggle span:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-menu li a {
+    display: block;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  }
+  
+  .nav-menu li a::after {
+    display: none;
+  }
+}
+
+/* 5. Boutons & Actions (Ergonomie Tactile Mobile-first) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  min-height: 48px; /* Target tactile ergonomique */
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #000000;
+  box-shadow: 0 4px 14px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+  background-color: #fbbf24;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+/* 6. Grilles & Cartes */
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--card-shadow, none);
+}
+
+.card:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-active);
+  transform: translateY(-4px);
+}
+
+.card-icon {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* 7. Bloc "Promesse" (Atelier Décision 2 & 8) */
+.promise-section {
+  padding: var(--section-padding-large);
+  background: radial-gradient(circle at 10% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 60%);
+}
+
+.promise-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.promise-quote {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-main);
+  position: relative;
+}
+
+.promise-quote strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.promise-stat-title {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.promise-80 {
+  font-size: 72px; /* Atelier Décision 3 */
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.promise-stat-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+@media (min-width: 768px) {
+  .promise-stat-title {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+/* 3 piliers de la méthode */
+.piliers-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+  .piliers-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pilier-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pilier-title {
+  font-size: 18px;
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pilier-title span {
+  color: var(--primary);
+  font-size: 20px;
+}
+
+.pilier-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* 8. Tarification (Atelier Décision 4 & 6) */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: var(--transition-smooth);
+}
+
+.pricing-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Carte featured ultra-subtile */
+.pricing-card.featured {
+  border: 1px solid var(--primary);
+  background: rgba(245, 158, 11, 0.03);
+}
+
+.pricing-card-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.pricing-title {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.pricing-price {
+  font-size: 28px;
+  font-family: var(--font-title);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.pricing-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.pricing-features li {
+  font-size: 14px;
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Spécificités mobile pour la carte featured */
+@media (max-width: 768px) {
+  .pricing-card.featured {
+    border-left: 3px solid var(--primary) !important;
+  }
+}
+
+/* 9. Témoignages (Atelier Décision 7 & 10) */
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial-item {
+  position: relative;
+  padding: 24px 32px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.testimonial-item::before {
+  content: '«';
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  font-family: var(--font-title);
+  font-size: 80px;
+  color: var(--primary);
+  opacity: 0.3; /* Atelier Décision 10 */
+  line-height: 1;
+  pointer-events: none;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-main);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-text strong {
+  font-weight: 500; /* Atelier Décision 7 */
+  color: var(--text-heading);
+}
+
+.testimonial-author {
+  font-family: var(--font-title);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary);
+}
+
+/* 10. Accordéons FAQ */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item details {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+}
+
+.faq-item details[open] {
+  border-color: var(--border-active);
+}
+
+.faq-item summary {
+  padding: 20px 24px;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.faq-item details[open] summary::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.faq-content {
+  padding: 0 24px 24px 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* 11. Formulaires Standard & Conversational Wizard */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: var(--transition-smooth);
+  min-height: 48px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.15);
+}
+
+/* 12. Pied de page (Footer) */
+footer {
+  background-color: var(--bg-footer);
+  padding: 60px 0 30px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+.footer-brand h3 {
+  font-size: 18px;
+  color: var(--text-heading);
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.footer-links h4 {
+  font-size: 14px;
+  color: var(--text-heading);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-seo-paragraph {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  line-height: 1.8;
+  font-size: 12px;
+}
+
+.footer-seo-paragraph a {
+  color: var(--text-muted);
+  border-bottom: 1px dotted var(--text-muted);
+}
+
+.footer-seo-paragraph a:hover {
+  color: #ffffff;
+  border-bottom-style: solid;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}

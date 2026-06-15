@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUDO ÉVÉNEMENTIEL - DJ Entreprise &amp; Collectivités</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+    "background": "var(--bg-dark)",
+    "surface": "var(--bg-dark)",
+    "on-background": "var(--text-main)",
+    "on-surface": "var(--text-main)",
+    "on-surface-variant": "var(--text-muted)",
+    "text-brown-deep": "var(--text-heading)",
+    "primary": "var(--primary)",
+    "primary-container": "var(--primary-glow)",
+    "on-primary": "var(--text-heading)",
+    "on-primary-container": "var(--text-main)",
+    "secondary": "var(--text-muted)",
+    "on-secondary": "var(--text-main)",
+    "secondary-container": "var(--bg-card-hover)",
+    "on-secondary-container": "var(--text-main)",
+    "tertiary": "var(--border)",
+    "on-tertiary": "var(--text-main)",
+    "tertiary-container": "var(--bg-card-hover)",
+    "on-tertiary-container": "var(--text-main)",
+    "surface-paper": "var(--bg-card)",
+    "surface-container-lowest": "var(--bg-card)",
+    "surface-container-low": "var(--bg-card-hover)",
+    "surface-container": "var(--bg-card)",
+    "surface-container-high": "var(--bg-card-hover)",
+    "surface-container-highest": "var(--bg-card-hover)",
+    "surface-dim": "var(--bg-card-hover)",
+    "surface-bright": "var(--bg-dark)",
+    "surface-tint": "var(--primary)",
+    "outline": "var(--border)",
+    "outline-variant": "var(--border)",
+    "corporate-slate": "var(--primary)"
+},
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-v-desktop": "8rem",
+                        "gutter": "1.5rem",
+                        "container-max": "1280px",
+                        "section-v-mobile": "4rem",
+                        "stack-gap": "1rem"
+                    },
+                    "fontFamily": {
+                        "display-mobile": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Outfit"],
+                        "button": ["Outfit"],
+                        "display": ["Outfit"],
+                        "headline-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "display-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f1f5f9; /* Override background to Slate theme requirement */
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(53, 37, 18, 0.05);
+        }
+    </style>
+
+  <!-- Shared CSS Variables and Styles -->
+  <link rel="stylesheet" href="../shared/style.css">
+</head>
+<body class="theme-corporate bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<!-- En-tÃªte / Navigation -->
+<header>
+  <div class="container nav-wrapper">
+    <a href="../index.html" class="logo">
+      LUDO <span>Ã‰VÃ‰NEMENTIEL</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu principal">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html" class="nav-link ">Accueil</a></li>
+      <li><a href="../mariage/index.html" class="nav-link ">Mariage</a></li>
+      <li><a href="../anniv-18-25/index.html" class="nav-link ">Anniv 18-25</a></li>
+      <li><a href="../anniv-30-60/index.html" class="nav-link ">Anniv 30-60</a></li>
+      <li><a href="../entreprise/index.html" class="nav-link active">Entreprise</a></li>
+      <li><a href="../contact/index.html" class="nav-link ">Contact</a></li>
+    </ul>
+  </div>
+</header>
+<!-- NavigationDrawer (Mobile) -->
+<div class="fixed inset-0 z-[60] bg-black/50 transition-opacity duration-300 -translate-x-full md:hidden" id="mobile-drawer">
+<div class="h-full w-80 bg-surface dark:bg-surface-container-highest rounded-r-xl shadow-xl shadow-deep-brown/10 flex flex-col gap-stack-gap py-8 overflow-y-auto transform transition-transform duration-300">
+<div class="px-6 pb-4 border-b border-sage-green/20 flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-deep-brown dark:text-primary-fixed">LUDO ÉVÉNEMENTIEL</span>
+<button class="text-deep-brown focus:outline-none" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-2 px-2 mt-4 font-label-caps text-label-caps">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-3 mx-2 hover:bg-surface-container-low rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+                    Accueil
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-3 mx-2 hover:bg-surface-container-low rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+                    Mariage
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-3 mx-2 hover:bg-surface-container-low rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">celebration</span>
+                    Anniv 18-25
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-3 mx-2 hover:bg-surface-container-low rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">auto_awesome</span>
+                    Anniv 30-60
+                </a>
+<a class="flex items-center gap-4 bg-secondary-container text-on-secondary-container rounded-full px-6 py-3 mx-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">business_center</span>
+                    Entreprise
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-3 mx-2 hover:bg-surface-container-low rounded-full transition-all mt-4" href="#contact">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">mail</span>
+                    Contact
+                </a>
+</nav>
+</div>
+</div>
+<main class="pt-24 pb-section-v-mobile md:pb-section-v-desktop">
+<!-- Hero Section -->
+<section class="px-gutter w-full max-w-container-max mx-auto mb-16 md:mb-24">
+<div class="relative rounded-2xl overflow-hidden h-[80vh] min-h-[600px] flex items-center justify-center">
+<img alt="Événement d'entreprise festif avec DJ" class="absolute inset-0 w-full h-full object-cover" data-alt="A sophisticated corporate event setting in a modern venue, featuring a high-end DJ booth setup. Colleagues are mingling and celebrating in a lively, elegant atmosphere with warm, ambient lighting. The mood is professional yet festive, blending slate blue accents with warm gold lighting, reflecting a premium B2B event experience." src="https://lh3.googleusercontent.com/aida/AP1WRLtpz_oYBIqU-vKNQi6QDGwvWm576zf_xP1Nj6KF1ED2EAvtWzgl2JJyeX1hVdWyFzUfWRP8koQq2wpk2ZP3wwcuSoa4O3r_ORPh-JtyuJfGA2K1GqByxIIfMCOv9d7rHIxBa85vsz1eC4rNwVwGoxFI93uTlpbcUlJs-nDRrxsTMvcAWP5Gzfyw3JQ9_uRXFzgupTqZvttQtY9HOGVkC4Xui8HPQJdrO7tearyrToMFYo5T4HNdhLGVcg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-corporate-slate/90 via-corporate-slate/50 to-transparent"></div>
+<div class="relative z-10 text-center text-white-paper max-w-3xl px-6">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-white-paper/10 backdrop-blur-sm rounded-full mb-6 border border-white-paper/20">
+<span class="material-symbols-outlined text-amber-gold" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-label-caps tracking-wider">4.9/5 Google &amp; 1001DJ</span>
+</div>
+<h1 class="font-display-mobile md:font-display text-display-mobile md:text-display mb-6 leading-tight">Offrez à vos collaborateurs un moment hors du temps, festif et libérateur.</h1>
+<p class="font-body-lg text-body-lg text-surface-container-high mb-8">Un événement d'entreprise réussi est un moment pour relâcher la pression et célébrer vos succès ensemble.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="px-8 py-4 bg-amber-gold text-deep-brown font-button text-button rounded-lg hover:shadow-lg hover:shadow-amber-gold/20 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto text-center" href="#contact">Obtenir un devis</a>
+<span class="font-label-caps text-label-caps text-white-paper/80">dès 500 €</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Esprit Section -->
+<section class="px-gutter w-full max-w-container-max mx-auto mb-16 md:mb-24">
+<div class="grid md:grid-cols-2 gap-12 items-center bg-white-paper rounded-2xl p-8 md:p-12 shadow-sm shadow-deep-brown/5">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-corporate-slate mb-6">Offrez à vos équipes un souffle et un moment hors du temps.</h2>
+<div class="space-y-4 text-on-surface-variant font-body-md text-body-md">
+<p>La culture d'entreprise ne se construit pas uniquement dans des salles de réunion. Elle s'épanouit lors de moments partagés où la hiérarchie s'estompe pour laisser place à la convivialité.</p>
+<p>Notre rôle en tant que DJ n'est pas seulement de passer de la musique, mais de créer une atmosphère où vos collaborateurs se sentent à l'aise pour relâcher la pression, tisser des liens informels et célébrer les objectifs atteints.</p>
+<p>Une animation musicale sur mesure transforme une simple soirée d'entreprise en un événement mémorable qui renforce le sentiment d'appartenance.</p>
+</div>
+</div>
+<div class="h-full min-h-[300px] rounded-xl overflow-hidden shadow-inner">
+<img alt="Ambiance soirée d'entreprise" class="w-full h-full object-cover" data-alt="A dynamic corporate party scene showing professionals dancing and networking in a chic industrial-style venue. The lighting is sophisticated, with subtle amber and slate tones highlighting a premium DJ setup in the background. The atmosphere conveys energetic team bonding and high-end event production." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZblffsnTNDg3a6PO0JWzWzmYNOUrHwafL9QEKNk6p4KNh3xA7wxjg5Tm35IHvxA9lC6G-owsLnB1YoXnMnlDZHIuFhtmJOA-8J7HeN9fHPKekLkwJVwoqSzSgqiY1lN-JVQTdNygSkvUlhd6LKtiuxprD5BhVf_GoTpbzfuM3dbci8yp1aEdoGgOaEzsIkjudgej59V60MoQGX5yz0_Bmzj69ZI_ZBzbNx7ay8kBaYHdZ03vxa5ElvwBFjm64t3RiJt8-fThyFi4"/>
+</div>
+</div>
+</section>
+<!-- Domaines d'intervention -->
+<section class="px-gutter w-full max-w-container-max mx-auto mb-16 md:mb-24">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-corporate-slate mb-4">Nos Domaines d'Intervention</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Des prestations adaptées à la nature de votre organisation et à vos objectifs de communication.</p>
+</div>
+<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white-paper p-8 rounded-xl shadow-sm shadow-deep-brown/5 border border-sage-green/20 hover:shadow-md transition-shadow duration-300">
+<div class="w-14 h-14 bg-surface-container rounded-full flex items-center justify-center mb-6 text-corporate-slate">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">celebration</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-brown mb-3">Fêtes de Fin d'Année</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Arbres de Noël, soirées de vœux et repas de fin d'année. Une ambiance chaleureuse et fédératrice pour clôturer l'exercice en beauté.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white-paper p-8 rounded-xl shadow-sm shadow-deep-brown/5 border border-sage-green/20 hover:shadow-md transition-shadow duration-300">
+<div class="w-14 h-14 bg-surface-container rounded-full flex items-center justify-center mb-6 text-corporate-slate">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-brown mb-3">Scolaire &amp; Étudiant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Galas de fin d'études, soirées d'intégration et remises de diplômes. Des DJ sets dynamiques adaptés aux attentes de la jeune génération.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white-paper p-8 rounded-xl shadow-sm shadow-deep-brown/5 border border-sage-green/20 hover:shadow-md transition-shadow duration-300">
+<div class="w-14 h-14 bg-surface-container rounded-full flex items-center justify-center mb-6 text-corporate-slate">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">handshake</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-brown mb-3">Agences Événementielles</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Partenariat B2B pour vos clients. Fiabilité technique, présentation irréprochable et adaptabilité totale au cahier des charges de vos annonceurs.</p>
+</div>
+</div>
+</section>
+<!-- Garanties -->
+<section class="bg-corporate-slate text-white-paper py-16 md:py-24 mb-16 md:mb-24">
+<div class="px-gutter w-full max-w-container-max mx-auto">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Nos Engagements Pro</h2>
+<p class="font-body-md text-body-md text-surface-container-high max-w-2xl mx-auto">La garantie d'une prestation sereine pour les organisateurs.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="flex items-start gap-4">
+<div class="mt-1 text-amber-gold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Présence et fiabilité</h4>
+<p class="font-body-md text-body-md text-surface-container-high">Arrivée anticipée, matériel de secours systématique et présentation soignée adaptée à votre code vestimentaire.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 text-amber-gold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Discrétion au micro</h4>
+<p class="font-body-md text-body-md text-surface-container-high">Animation sobre et élégante. Nous laissons la musique parler d'elle-même sans interventions microphoniques intempestives.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 text-amber-gold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Autonomie &amp; Gestion</h4>
+<p class="font-body-md text-body-md text-surface-container-high">Installation autonome, gestion technique des discours et respect scrupuleux du timing de votre événement.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tarifs -->
+<section class="px-gutter w-full max-w-container-max mx-auto mb-16 md:mb-24">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-corporate-slate mb-4">Packs Entreprise</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Des solutions claires. <span class="bg-surface-container px-2 py-1 rounded text-sm text-corporate-slate font-medium ml-2">Facturation avec SIRET</span></p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 items-stretch">
+<!-- Pack 1 -->
+<div class="bg-white-paper rounded-2xl p-8 shadow-sm border border-sage-green/20 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-corporate-slate mb-2">Essentiel</h3>
+<p class="text-on-surface-variant mb-6 flex-grow">Pour les afterworks et petites réceptions (jusqu'à 50 pers).</p>
+<div class="mb-6">
+<span class="font-display-mobile text-display-mobile text-deep-brown">500 €</span><span class="text-on-surface-variant"> HT</span>
+</div>
+<ul class="space-y-3 mb-8 text-body-md">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sage-green text-sm">done</span> 4h de prestation DJ</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sage-green text-sm">done</span> Sonorisation adaptée</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sage-green text-sm">done</span> Éclairage piste basique</li>
+</ul>
+<a class="w-full py-3 px-6 text-center border-2 border-sage-green text-deep-brown font-button text-button rounded-lg hover:bg-surface-container transition-colors mt-auto" href="#contact">Réserver</a>
+</div>
+<!-- Pack 2 - FEATURED -->
+<div class="bg-surface-bright rounded-2xl p-8 shadow-lg border-2 border-amber-gold relative flex flex-col transform md:-translate-y-4">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-gold text-deep-brown px-4 py-1 rounded-full font-label-caps text-xs tracking-wider">LE PLUS DEMANDÉ</div>
+<h3 class="font-headline-md text-headline-md text-deep-brown mb-2">Gala Corporate</h3>
+<p class="text-on-surface-variant mb-6 flex-grow">L'expérience complète pour votre soirée annuelle (jusqu'à 200 pers).</p>
+<div class="mb-6">
+<span class="font-display-mobile text-display-mobile text-deep-brown">850 €</span><span class="text-on-surface-variant"> HT</span>
+</div>
+<ul class="space-y-3 mb-8 text-body-md">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-amber-gold text-sm">done</span> Prestation DJ jusqu'à 3h du matin</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-amber-gold text-sm">done</span> Sonorisation Premium</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-amber-gold text-sm">done</span> Éclairage dynamique &amp; Lyres</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-amber-gold text-sm">done</span> Micro HF pour discours</li>
+</ul>
+<a class="w-full py-3 px-6 text-center bg-amber-gold text-deep-brown font-button text-button rounded-lg hover:shadow-lg hover:-translate-y-0.5 transition-all mt-auto" href="#contact">Réserver ce pack</a>
+</div>
+<!-- Pack 3 -->
+<div class="bg-white-paper rounded-2xl p-8 shadow-sm border border-sage-green/20 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-corporate-slate mb-2">Grand Format</h3>
+<p class="text-on-surface-variant mb-6 flex-grow">Pour les conventions et grands rassemblements (200+ pers).</p>
+<div class="mb-6">
+<span class="font-display-mobile text-display-mobile text-deep-brown">Sur devis</span>
+</div>
+<ul class="space-y-3 mb-8 text-body-md">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sage-green text-sm">done</span> Sonorisation Multi-zones</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sage-green text-sm">done</span> Éclairage architectural complet</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sage-green text-sm">done</span> Vidéoprojection</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sage-green text-sm">done</span> Régie technique dédiée</li>
+</ul>
+<a class="w-full py-3 px-6 text-center border-2 border-sage-green text-deep-brown font-button text-button rounded-lg hover:bg-surface-container transition-colors mt-auto" href="#contact">Demander un devis</a>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="px-gutter w-full max-w-container-max mx-auto" id="contact">
+<div class="bg-white-paper rounded-2xl shadow-lg border border-sage-green/20 overflow-hidden">
+<div class="grid md:grid-cols-2">
+<div class="p-8 md:p-12 bg-corporate-slate text-white-paper">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">Discutons de votre événement d'entreprise</h2>
+<p class="text-surface-container-high mb-8">Remplissez ce formulaire pour nous faire part de votre projet. Nous vous recontacterons sous 24h avec une proposition adaptée.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-gold">mail</span>
+<span>contact@ludo-evenementiel.fr</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-gold">phone</span>
+<span>06 12 34 56 78</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-gold">location_on</span>
+<span>Intervention en Seine-et-Marne (77) et IDF</span>
+</div>
+</div>
+</div>
+<div class="p-8 md:p-12">
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-corporate-slate mb-1">Prénom</label>
+<input class="w-full rounded-lg border-sage-green/50 bg-surface-bright focus:border-amber-gold focus:ring focus:ring-amber-gold/20" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-corporate-slate mb-1">Nom</label>
+<input class="w-full rounded-lg border-sage-green/50 bg-surface-bright focus:border-amber-gold focus:ring focus:ring-amber-gold/20" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-corporate-slate mb-1">Société / Collectivité</label>
+<input class="w-full rounded-lg border-sage-green/50 bg-surface-bright focus:border-amber-gold focus:ring focus:ring-amber-gold/20" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-corporate-slate mb-1">Email professionnel</label>
+<input class="w-full rounded-lg border-sage-green/50 bg-surface-bright focus:border-amber-gold focus:ring focus:ring-amber-gold/20" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-corporate-slate mb-1">Téléphone</label>
+<input class="w-full rounded-lg border-sage-green/50 bg-surface-bright focus:border-amber-gold focus:ring focus:ring-amber-gold/20" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-corporate-slate mb-1">Type d'événement</label>
+<select class="w-full rounded-lg border-sage-green/50 bg-surface-bright focus:border-amber-gold focus:ring focus:ring-amber-gold/20">
+<option>Fête de fin d'année</option>
+<option>Séminaire / Convention</option>
+<option>Soirée client</option>
+<option>Événement étudiant</option>
+<option>Autre</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-corporate-slate mb-1">Détails du projet (Date, lieu, nombre d'invités...)</label>
+<textarea class="w-full rounded-lg border-sage-green/50 bg-surface-bright focus:border-amber-gold focus:ring focus:ring-amber-gold/20" rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-corporate-slate text-white-paper font-button text-button rounded-lg hover:bg-corporate-slate/90 transition-colors" type="submit">Envoyer la demande</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<!-- Pied de page -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>LUDO Ã‰VÃ‰NEMENTIEL</h3>
+        <p>DJ professionnel gÃ©nÃ©raliste pour mariages, anniversaires et Ã©vÃ©nements d'entreprises en Seine-et-Marne.</p>
+        <p>Prestations haut de gamme sur-mesure, sonorisation et mise en lumiÃ¨re architecturales.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="../mariage/index.html">DJ Mariage</a></li>
+          <li><a href="../anniv-18-25/index.html">Anniversaire 18-25 ans</a></li>
+          <li><a href="../anniv-30-60/index.html">Anniversaire 30-60 ans</a></li>
+          <li><a href="../entreprise/index.html">SoirÃ©es d'Entreprises</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact &amp; Infos</h4>
+        <ul>
+          <li><a href="../contact/index.html">Demander un Devis</a></li>
+          <li><a href="../index.html#conditions">Conditions</a></li>
+          <li><a href="../contact/index.html#faq">Questions FrÃ©quentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-seo-paragraph">
+        <strong>Zone d'intervention :</strong> DJ Seine-et-Marne (77) - Meaux, Chessy, Marne-la-VallÃ©e, Serris, Melun, Fontainebleau, Coulommiers, Torcy, Pontault-Combault, Provins, Chelles. Animations de mariages, anniversaires intergÃ©nÃ©rationnels, fÃªtes privÃ©es, soirÃ©es corporate, sÃ©minaires de fin d'annÃ©e et lancements de produits.
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Â© 2026 Ludo Ã‰vÃ©nementiel. Tous droits rÃ©servÃ©s.</p>
+      <p>
+        <a href="#">Mentions LÃ©gales</a> | 
+        <a href="#">Politique de ConfidentialitÃ©</a>
+      </p>
+    </div>
+  </div>
+</footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          menuToggle.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body></html>

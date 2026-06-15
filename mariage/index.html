@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUDO ÉVÉNEMENTIEL - DJ Mariage Seine-et-Marne (77)</title>
+<meta content="DJ professionnel pour votre mariage en Seine-et-Marne. Une ambiance festive, élégante et sur-mesure pour une soirée inoubliable." name="description"/>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+    "background": "var(--bg-dark)",
+    "surface": "var(--bg-dark)",
+    "on-background": "var(--text-main)",
+    "on-surface": "var(--text-main)",
+    "on-surface-variant": "var(--text-muted)",
+    "text-brown-deep": "var(--text-heading)",
+    "primary": "var(--primary)",
+    "primary-container": "var(--primary-glow)",
+    "on-primary": "var(--text-heading)",
+    "on-primary-container": "var(--text-main)",
+    "secondary": "var(--text-muted)",
+    "on-secondary": "var(--text-main)",
+    "secondary-container": "var(--bg-card-hover)",
+    "on-secondary-container": "var(--text-main)",
+    "tertiary": "var(--border)",
+    "on-tertiary": "var(--text-main)",
+    "tertiary-container": "var(--bg-card-hover)",
+    "on-tertiary-container": "var(--text-main)",
+    "surface-paper": "var(--bg-card)",
+    "surface-container-lowest": "var(--bg-card)",
+    "surface-container-low": "var(--bg-card-hover)",
+    "surface-container": "var(--bg-card)",
+    "surface-container-high": "var(--bg-card-hover)",
+    "surface-container-highest": "var(--bg-card-hover)",
+    "surface-dim": "var(--bg-card-hover)",
+    "surface-bright": "var(--bg-dark)",
+    "surface-tint": "var(--primary)",
+    "outline": "var(--border)",
+    "outline-variant": "var(--border)",
+    "corporate-slate": "var(--primary)"
+},
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "section-v-desktop": "8rem",
+                        "container-max": "1280px",
+                        "stack-gap": "1rem",
+                        "section-v-mobile": "4rem"
+                    },
+                    "fontFamily": {
+                        "display": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "display-mobile": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "button": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "label-caps": ["Outfit"],
+                        "headline-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-caps": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .theme-warm { background-color: #fff8f4; color: #352512; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(127, 117, 108, 0.1); }
+        .amber-shadow { box-shadow: 0 10px 30px -10px rgba(255, 191, 0, 0.2); }
+    </style>
+
+  <!-- Shared CSS Variables and Styles -->
+  <link rel="stylesheet" href="../shared/style.css">
+</head>
+<body class="theme-warm bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header Section -->
+<!-- En-tÃªte / Navigation -->
+<header>
+  <div class="container nav-wrapper">
+    <a href="../index.html" class="logo">
+      LUDO <span>Ã‰VÃ‰NEMENTIEL</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu principal">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html" class="nav-link ">Accueil</a></li>
+      <li><a href="../mariage/index.html" class="nav-link active">Mariage</a></li>
+      <li><a href="../anniv-18-25/index.html" class="nav-link ">Anniv 18-25</a></li>
+      <li><a href="../anniv-30-60/index.html" class="nav-link ">Anniv 30-60</a></li>
+      <li><a href="../entreprise/index.html" class="nav-link ">Entreprise</a></li>
+      <li><a href="../contact/index.html" class="nav-link ">Contact</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-12 pb-section-v-mobile md:pb-section-v-desktop px-gutter overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-10" data-alt="A grand wedding reception hall with historic stone walls, illuminated by warm amber uplighting and elegant fairy lights draped across high timber beams. The atmosphere is luxurious and intimate, with long wooden tables perfectly set for a sophisticated dinner celebration." src="https://lh3.googleusercontent.com/aida/AP1WRLso6y-YzU3hW_geZFIR-FzqCWKIgWhkkAwCe60lMgEPnKcu8P0bqmHv9owHavJG9DiuWSo_mS4vDUf8J7yavIXrMsMnM6X4mipVnTFIq1g4k07WMxeBIgGJ68bY3YoxqzMlQOvHnX3ReRFdaz6YRYEY9DsG5zLPxdQ9Tsqjh4uiH8D9p3vD-Pw3ZxXIe7BW_uaI_plEVIDoKWYVDpTaV09fmcIkFw7PZrFF4jAIhtdTqJnjJMXHLQRAYvs"/>
+<div class="absolute inset-0 bg-gradient-to-b from-surface/80 via-transparent to-surface"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white-paper rounded-full shadow-sm border border-sage-green/20 animate-fade-in">
+<span class="text-amber-gold">★</span>
+<span class="font-label-caps text-on-surface-variant">Note moyenne de 4.9/5 sur Google, Mariages.net & 1001DJ | Plus de 90 avis réels</span>
+</div>
+<h1 class="font-display text-display-mobile md:text-display text-primary mb-6 leading-tight">
+                    Votre DJ de mariage en <span class="text-secondary">Seine-et-Marne (77)</span> : une ambiance festive, élégante et sur-mesure.
+                </h1>
+<p class="font-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                    DJ professionnel d'expérience garantissant une piste de danse pleine et une coordination fluide avec vos traiteurs et prestataires pour une soirée sereine.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<a class="group flex items-center gap-3 px-8 py-4 bg-amber-gold text-deep-brown font-button rounded-lg text-lg hover:shadow-lg transition-all hover:-translate-y-1" href="#contact">
+                        👉 Vérifier la disponibilité de ma date
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<div class="text-deep-brown font-display font-semibold text-xl">
+                        À partir de <span class="text-3xl text-secondary">1 500 €</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Metier Section -->
+<section class="py-section-v-mobile md:py-section-v-desktop bg-surface-container px-gutter">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="relative p-8 rounded-2xl bg-white-paper shadow-xl">
+<div class="font-display text-[120px] font-extrabold text-amber-gold/20 leading-none absolute -top-12 -left-4 select-none">80%</div>
+<h2 class="font-display text-headline-md md:text-headline-lg text-primary mb-6 relative z-10">
+                            Le DJ est responsable à 80% de la réussite de votre soirée.
+                        </h2>
+<div class="space-y-4 font-body-md text-on-surface-variant">
+<p>Un mariage réussi, c'est l'équilibre parfait entre élégance technique et folie sur le dancefloor. Pas de playlist figée imposée à vos invités.</p>
+<p class="italic text-primary/70">"De Confessions Nocturnes à Snoop Dogg, en passant par Ancrée à ton port... nous créons le lien entre toutes les générations."</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2 rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full aspect-[4/5] object-cover" data-alt="A high-end professional DJ setup at a wedding, featuring a premium Pioneer DJ controller resting on a clean white tablecloth. In the background, out-of-focus wedding guests are dancing under warm, golden fairy lights and lush floral arrangements, capturing the energetic and joyful peak of the celebration." src="https://lh3.googleusercontent.com/aida/AP1WRLtpz_oYBIqU-vKNQi6QDGwvWm576zf_xP1Nj6KF1ED2EAvtWzgl2JJyeX1hVdWyFzUfWRP8koQq2wpk2ZP3wwcuSoa4O3r_ORPh-JtyuJfGA2K1GqByxIIfMCOv9d7rHIxBa85vsz1eC4rNwVwGoxFI93uTlpbcUlJs-nDRrxsTMvcAWP5Gzfyw3JQ9_uRXFzgupTqZvttQtY9HOGVkC4Xui8HPQJdrO7tearyrToMFYo5T4HNdhLGVcg"/>
+</div>
+</div>
+</section>
+<!-- Secrets Section (Bento Grid) -->
+<section class="py-section-v-mobile md:py-section-v-desktop px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-display text-headline-md md:text-headline-lg text-primary mb-4">Rien à gérer, profitez simplement de vos invités.</h2>
+<p class="text-on-surface-variant">Une organisation millimétrée pour une tranquillité totale.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 glass-card p-8 rounded-2xl hover:border-amber-gold transition-colors">
+<span class="material-symbols-outlined text-amber-gold text-4xl mb-4">groups</span>
+<h3 class="font-display text-headline-md mb-2">L'équilibre intergénérationnel</h3>
+<p class="text-on-surface-variant">Une programmation qui fédère petits et grands, des classiques intemporels aux hits actuels.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:border-amber-gold transition-colors">
+<span class="material-symbols-outlined text-amber-gold text-4xl mb-4">handshake</span>
+<h3 class="font-display text-xl mb-2">Liaison prestataires</h3>
+<p class="text-on-surface-variant">Coordination parfaite avec le traiteur pour le service.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:border-amber-gold transition-colors">
+<span class="material-symbols-outlined text-amber-gold text-4xl mb-4">map</span>
+<h3 class="font-display text-xl mb-2">Connaissance des lieux</h3>
+<p class="text-on-surface-variant">Habitué des plus beaux domaines du 77.</p>
+</div>
+<div class="md:col-span-2 glass-card p-8 rounded-2xl hover:border-amber-gold transition-colors">
+<span class="material-symbols-outlined text-amber-gold text-4xl mb-4">high_quality</span>
+<h3 class="font-display text-headline-md mb-2">Équipement esthétique</h3>
+<p class="text-on-surface-variant">Un matériel haut de gamme et discret qui s'intègre parfaitement à votre décoration de mariage.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Garanties & Image -->
+<section class="py-section-v-mobile md:py-section-v-desktop bg-primary text-white-paper overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-display text-headline-md md:text-headline-lg mb-10">Nos Engagements</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-amber-gold bg-amber-gold/10 p-2 rounded-full">check_circle</span>
+<div>
+<h4 class="font-bold text-lg">Présence et fiabilité absolue</h4>
+<p class="text-on-primary-container">Contrat signé, assurance RC pro et solution de secours systématique.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-amber-gold bg-amber-gold/10 p-2 rounded-full">check_circle</span>
+<div>
+<h4 class="font-bold text-lg">Sobriété au micro</h4>
+<p class="text-on-primary-container">Pas d'animation "foire aux boudins", une prise de parole élégante et maîtrisée.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative">
+<img class="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="A sleek, modern mirror photobooth in a luxurious ballroom setting with velvet curtains and crystal chandeliers. A group of happy wedding guests is posing for a photo, their reflection clear on the glowing interactive screen, showcasing the premium entertainment options available for a high-end celebration." src="https://lh3.googleusercontent.com/aida/AP1WRLuN95bNBUos8knytjvI4LBdRHLPKfAlbw9hqQWVVv6xp4b_hxk_W4b9A9iGMhsuqIVBRvT7-DrVovssc_IWKH_BrVRQXcaZxc8yHk8UIi3BcsiTqNDx1w6jMuGbNUuEec_VJacx2sy9lSYVNMyBvnjPIIlrxmFhcSXNaM5cHX7S93c66hJWkjjfj0zeTRXkZkGOfn7usAF6ZSr-OsJQk8UbnHziRBg6BOQPb-TSxT8rtZHqtKOujwFySCk"/>
+<div class="absolute -bottom-8 -left-8 bg-amber-gold text-deep-brown p-8 rounded-2xl font-display font-bold text-2xl rotate-[-3deg]">
+                        Animation Garantie
+                    </div>
+</div>
+</div>
+</section>
+<!-- Tarifs Section -->
+<section class="py-section-v-mobile md:py-section-v-desktop px-gutter bg-surface">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-display text-headline-md md:text-headline-lg text-primary">Formules Clés en Main</h2>
+<p class="text-on-surface-variant">Tout est inclus : sonorisation, éclairage, et savoir-faire.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Option 1 -->
+<div class="bg-white-paper p-10 rounded-3xl border border-sage-green/20 hover:shadow-xl transition-shadow flex flex-col h-full">
+<div class="mb-6">
+<h3 class="font-display text-headline-md text-primary">Option 1 : DJ</h3>
+<p class="text-on-surface-variant">La prestation complète standard</p>
+</div>
+<div class="text-4xl font-display font-bold text-primary mb-8">1 500 €</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sage-green text-sm">done</span> DJ &amp; Sonorisation Premium</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sage-green text-sm">done</span> Éclairage de piste robotisé</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sage-green text-sm">done</span> Déplacement 77 inclus</li>
+</ul>
+<a class="w-full py-4 border-2 border-primary text-primary text-center rounded-xl font-button hover:bg-primary hover:text-white transition-colors" href="#contact">Choisir cette option</a>
+</div>
+<!-- Option 2 (Highlighted) -->
+<div class="bg-white-paper p-10 rounded-3xl border-4 border-amber-gold amber-shadow relative flex flex-col h-full overflow-hidden">
+<div class="absolute top-0 right-0 bg-amber-gold text-deep-brown px-4 py-1 font-label-caps text-[10px] uppercase tracking-widest rounded-bl-xl font-bold">Populaire</div>
+<div class="mb-6">
+<h3 class="font-display text-headline-md text-primary">Option 2 : DJ + Photo</h3>
+<p class="text-on-surface-variant">Le pack sérénité totale</p>
+</div>
+<div class="text-4xl font-display font-bold text-amber-gold mb-8">1 750 €</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-2 font-semibold"><span class="material-symbols-outlined text-amber-gold">star</span> Tout de l'Option 1</li>
+<li class="flex items-center gap-2 font-semibold"><span class="material-symbols-outlined text-amber-gold">photo_camera</span> Borne Selfie (Photobooth) illimitée</li>
+<li class="flex items-center gap-2 font-semibold"><span class="material-symbols-outlined text-amber-gold">cloud_upload</span> Galerie en ligne privée</li>
+</ul>
+<a class="w-full py-4 bg-amber-gold text-deep-brown text-center rounded-xl font-button hover:brightness-110 transition-all" href="#contact">Réserver ce pack</a>
+</div>
+</div>
+<!-- Addons -->
+<div class="mt-16 flex flex-wrap justify-center gap-6">
+<div class="flex items-center gap-2 px-6 py-3 bg-surface-container rounded-full border border-sage-green/20">
+<span class="text-xl">💡</span> <span class="font-medium">Décoration LED (100€)</span>
+</div>
+<div class="flex items-center gap-2 px-6 py-3 bg-surface-container rounded-full border border-sage-green/20">
+<span class="text-xl">🎥</span> <span class="font-medium">Spinner 360°</span>
+</div>
+<div class="flex items-center gap-2 px-6 py-3 bg-surface-container rounded-full border border-sage-green/20">
+<span class="text-xl">💨</span> <span class="font-medium">Effet Fumigène (30€)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-v-mobile md:py-section-v-desktop px-gutter">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-display text-headline-md md:text-headline-lg text-primary mb-12 text-center">Questions fréquentes</h2>
+<div class="space-y-4">
+<details class="group bg-white-paper rounded-2xl border border-sage-green/20 overflow-hidden" open="">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-display text-lg font-semibold">Travaillez-vous seul ou en équipe ?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant border-t border-sage-green/10">
+                            Je suis votre interlocuteur principal du premier contact au jour J. Pour les grands événements ou les options combinées, je suis accompagné de mon assistant technique de confiance.
+                        </div>
+</details>
+<details class="group bg-white-paper rounded-2xl border border-sage-green/20 overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-display text-lg font-semibold">Peut-on choisir les musiques à l'avance ?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant border-t border-sage-green/10">
+                            Absolument. Nous définissons ensemble vos titres incontournables (Blacklist et Whitelist) via une interface dédiée, tout en me laissant la liberté d'adapter le rythme en direct selon l'énergie de vos invités.
+                        </div>
+</details>
+<details class="group bg-white-paper rounded-2xl border border-sage-green/20 overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-display text-lg font-semibold">Jusqu'à quelle heure jouez-vous ?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant border-t border-sage-green/10">
+                            Mes prestations de base incluent l'animation jusqu'à 4h du matin. Des options d'heures supplémentaires sont disponibles si la fête se prolonge.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-v-mobile md:py-section-v-desktop px-gutter bg-surface-container" id="contact">
+<div class="max-w-4xl mx-auto bg-white-paper p-8 md:p-16 rounded-[40px] shadow-2xl">
+<div class="text-center mb-12">
+<h2 class="font-display text-headline-md md:text-headline-lg text-primary mb-4">Discutons de votre projet de mariage</h2>
+<p class="text-on-surface-variant">Réponse garantie sous 24 heures.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-6">
+<div>
+<label class="block font-label-caps text-xs mb-2 text-on-surface-variant uppercase tracking-widest">Noms &amp; Prénoms</label>
+<input class="w-full bg-surface-container-low border-sage-green/20 rounded-xl px-6 py-4 focus:ring-2 focus:ring-amber-gold focus:border-amber-gold outline-none transition-all" placeholder="Sophie &amp; Marc" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-xs mb-2 text-on-surface-variant uppercase tracking-widest">Date du mariage</label>
+<input class="w-full bg-surface-container-low border-sage-green/20 rounded-xl px-6 py-4 focus:ring-2 focus:ring-amber-gold focus:border-amber-gold outline-none transition-all" type="date"/>
+</div>
+<div>
+<label class="block font-label-caps text-xs mb-2 text-on-surface-variant uppercase tracking-widest">Lieu de réception</label>
+<input class="w-full bg-surface-container-low border-sage-green/20 rounded-xl px-6 py-4 focus:ring-2 focus:ring-amber-gold focus:border-amber-gold outline-none transition-all" placeholder="Ex: Château de Fontainebleau" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-xs mb-2 text-on-surface-variant uppercase tracking-widest">Nombre d'invités</label>
+<input class="w-full bg-surface-container-low border-sage-green/20 rounded-xl px-6 py-4 focus:ring-2 focus:ring-amber-gold focus:border-amber-gold outline-none transition-all" placeholder="80" type="number"/>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="block font-label-caps text-xs mb-2 text-on-surface-variant uppercase tracking-widest">Votre message</label>
+<textarea class="w-full bg-surface-container-low border-sage-green/20 rounded-xl px-6 py-4 flex-grow focus:ring-2 focus:ring-amber-gold focus:border-amber-gold outline-none transition-all min-h-[200px]" placeholder="Parlez-moi de vos envies, du style musical que vous aimez..."></textarea>
+</div>
+<div class="md:col-span-2">
+<button class="w-full py-5 bg-primary text-on-primary font-display font-bold text-xl rounded-xl hover:bg-deep-brown transition-all hover:shadow-xl active:scale-[0.98]" type="submit">
+                            Envoyer ma demande de devis gratuit
+                        </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<!-- Pied de page -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>LUDO Ã‰VÃ‰NEMENTIEL</h3>
+        <p>DJ professionnel gÃ©nÃ©raliste pour mariages, anniversaires et Ã©vÃ©nements d'entreprises en Seine-et-Marne.</p>
+        <p>Prestations haut de gamme sur-mesure, sonorisation et mise en lumiÃ¨re architecturales.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="../mariage/index.html">DJ Mariage</a></li>
+          <li><a href="../anniv-18-25/index.html">Anniversaire 18-25 ans</a></li>
+          <li><a href="../anniv-30-60/index.html">Anniversaire 30-60 ans</a></li>
+          <li><a href="../entreprise/index.html">SoirÃ©es d'Entreprises</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact &amp; Infos</h4>
+        <ul>
+          <li><a href="../contact/index.html">Demander un Devis</a></li>
+          <li><a href="../index.html#conditions">Conditions</a></li>
+          <li><a href="../contact/index.html#faq">Questions FrÃ©quentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-seo-paragraph">
+        <strong>Zone d'intervention :</strong> DJ Seine-et-Marne (77) - Meaux, Chessy, Marne-la-VallÃ©e, Serris, Melun, Fontainebleau, Coulommiers, Torcy, Pontault-Combault, Provins, Chelles. Animations de mariages, anniversaires intergÃ©nÃ©rationnels, fÃªtes privÃ©es, soirÃ©es corporate, sÃ©minaires de fin d'annÃ©e et lancements de produits.
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Â© 2026 Ludo Ã‰vÃ©nementiel. Tous droits rÃ©servÃ©s.</p>
+      <p>
+        <a href="#">Mentions LÃ©gales</a> | 
+        <a href="#">Politique de ConfidentialitÃ©</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+        // Simple micro-interactions for FAQ or Scroll effects could go here
+        document.querySelectorAll('details').forEach((el) => {
+            el.addEventListener('toggle', (e) => {
+                if (el.open) {
+                    document.querySelectorAll('details').forEach((other) => {
+                        if (other !== el) other.removeAttribute('open');
+                    });
+                }
+            });
+        });
+    </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          menuToggle.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body></html>
